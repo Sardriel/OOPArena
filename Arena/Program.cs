@@ -6,17 +6,13 @@ namespace Arena
     {
         static void Main(string[] args)
         {
-            Kostka sestistenna = new Kostka(); 
-            Kostka desetistenna = new Kostka(10);
             
-            Console.WriteLine(sestistenna);
-            for (int i = 0; i <10; i++)
-                Console.Write(sestistenna.hod() + " ");
+            Kostka kostka = new Kostka(20);
+            Bojovnik sardriel = new Bojovnik("Sardriel", 100, 20, 10, kostka);
+            Bojovnik watashi = new Bojovnik("Watashi wa M", 60, 18, 15, kostka);
+            Arena arena = new Arena(sardriel, watashi, kostka);
 
-            Console.WriteLine("\n\n" + desetistenna);
-            for (int i = 0; i <10;i++)
-                Console.Write(desetistenna.hod() + " ");
-
+            arena.Zapas();
             Console.ReadKey();
         }
     }
