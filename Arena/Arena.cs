@@ -23,8 +23,12 @@ namespace Arena
         private void Vykresli()
         {
             Console.Clear();
-            Console.WriteLine("----------Aréna----------\n");
-            Console.WriteLine("Bojovníci: \n");
+            Console.WriteLine($"   _____                               ");
+            Console.WriteLine($"  /  _  \\_______   ____   ____ _____   ");
+            Console.WriteLine($" /  /_\\  \\_  __ \\_/ __ \\ /    \\\\__  \\  ");
+            Console.WriteLine($"/    |    \\  | \\/\\  ___/|   |  \\/ __ \\_");
+            Console.WriteLine($"\\____|__  /__|    \\___  >___|  (____  / ");
+            Console.WriteLine($"        \\/            \\/     \\/     \\/");
             VypisBojovnika(bojovnik1);
             Console.WriteLine();
             VypisBojovnika(bojovnik2);
