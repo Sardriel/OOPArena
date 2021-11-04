@@ -8,12 +8,12 @@ namespace Arena
 {
     class Bojovnik
     {
-        private string jmeno;
-        private int zivot;
-        private int maxZivot;
-        private int utok;
-        private int obrana;
-        private Kostka kostka;
+        protected string jmeno;
+        protected int zivot;
+        protected int maxZivot;
+        protected int utok;
+        protected int obrana;
+        protected Kostka kostka;
         private string zprava;
 
         public Bojovnik(string jmeno, int zivot, int utok, int obrana, Kostka kostka)
@@ -35,7 +35,7 @@ namespace Arena
             return (zivot > 0);
                 
         }
-        public string GrafickyZivot()
+        protected string GrafickyUkazatel(int aktualni, int maximalni)
         {
             string s = "[";
             int celkem = 20;
@@ -47,6 +47,10 @@ namespace Arena
             s = s.PadRight(celkem + 1);
             s += "]";
             return s;
+        }
+        public string GrafickyZivot()
+        {
+            return GrafickyUkazatel(zivot, maxZivot);
         }
 
         public void BranSe (int uder)
@@ -66,13 +70,13 @@ namespace Arena
                 zprava = String.Format("{0} odrazil útok", jmeno);
             NastavZpravu(zprava);
         }
-        public void Utoc(Bojovnik souper)
+        public virtual void Utoc(Bojovnik souper)
         {
             int uder = utok + kostka.hod();
             NastavZpravu(String.Format("{0} útočí s úderem {1} hp", jmeno, uder));
             souper.BranSe(uder);
         }
-        private void NastavZpravu(string zprava)
+        protected void NastavZpravu(string zprava)
         {
             this.zprava = zprava;
         }
