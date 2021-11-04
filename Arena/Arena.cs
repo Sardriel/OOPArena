@@ -30,6 +30,7 @@ namespace Arena
             VypisBojovnika(bojovnik2);
             Console.WriteLine();
         }
+
         private void VypisZpravu(string zprava)
         {
             Console.WriteLine(zprava);
@@ -70,11 +71,16 @@ namespace Arena
         {
             Console.WriteLine(b);
             Console.Write("Život: ");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine(b.GrafickyZivot());
+            Console.ResetColor();
             if (b is Mag)
             {
                 Console.Write("Mana: ");
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine(((Mag)b).GrafickaMana());
+                Console.ResetColor();
+                
             }
         }
     }

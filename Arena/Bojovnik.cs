@@ -37,20 +37,25 @@ namespace Arena
         }
         protected string GrafickyUkazatel(int aktualni, int maximalni)
         {
-            string s = "[";
+            
+            
+            string s = "";
             int celkem = 20;
             double pocet = Math.Round(((double)zivot / maxZivot) * celkem);
-            if ((pocet ==0)&&(Nazivu()))
-                    pocet = 1;
+            if ((pocet == 0) && (Nazivu()))
+                pocet = 1;
             for (int i = 0; i < pocet; i++)
-                s += "#";
+                s += "█";
             s = s.PadRight(celkem + 1);
-            s += "]";
+            s += "";
             return s;
+            
         }
         public string GrafickyZivot()
         {
+            
             return GrafickyUkazatel(zivot, maxZivot);
+            
         }
 
         public void BranSe (int uder)
